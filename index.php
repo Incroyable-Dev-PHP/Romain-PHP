@@ -1,16 +1,34 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html lang="en">
 
-    <!-- header included here -->
-    <!-- ... -->
+    <?php  include  './includes/head.html' ; ?>
 
     <body>
-        <div class="container">
-            <?php
-                // your code here with conditions
-                // ...
-            ?>
-        </div>
-    </body>
+        <?php
+            include  './includes/header.html' ;
+            include  './includes/nav.html' ;
+        
+        ?>
 
-</html>
+        < main class  =" container " >
+            <?php
+                if (isset($_GET [ 'about-me' ])) {
+                    include  "./pages/about-me.html" ;
+                    return;
+                } elseif (isset($_GET [ 'my-dreams' ])) {
+                    include  "./pages/my-dreams.html" ;
+                    return;
+                } elseif (isset($_GET [ 'my-passions' ])) {
+                    include  "./pages/my-passions.html" ;
+                    return;
+                } else {
+                    include  "./pages/accueil.html" ;
+                    return;
+                }
+            ?>
+        </main >
+
+        <?php  include  './includes/footer.html' ; ?>
+            </body >
+
+</ html >
